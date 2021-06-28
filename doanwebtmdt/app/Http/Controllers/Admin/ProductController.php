@@ -91,8 +91,8 @@ class ProductController extends Controller
                 'short_desc' => 'required|min:10|max:300',
                 'product_category_id' => 'required',
                 'thumb' => 'required|image|max:20480',
-                'price'=>'required|numeric|min:4|max:200',
-                'old_price'=>'required|numeric|min:4|max:200',
+                'price'=>'required|numeric',
+                'old_price'=>'required|numeric',
                 
 
                 
@@ -101,7 +101,7 @@ class ProductController extends Controller
                 'required' => ':attribute không được để trống',
                 'numeric'=>':attribute định dạng là số',
                 'min' => ':attribute có độ dài tối thiểu là :min ký tự',
-                'max' => ':attribute có độ dài tối thiểu là :max ký tự',
+                'max' => ':attribute có độ dài tối đa thiểu là :max ký tự',
                 'thumb.max' => 'Ảnh đại diện có độ dài tối thiểu là 20Mb',
                 'image' => ':attribute phải là định dạng (jpg, jpeg, png, bmp, gif, svg, hoặc webp)',
             ],
