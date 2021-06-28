@@ -124,20 +124,7 @@ class ProductController extends Controller
 
             $thumb = 'http://localhost:8081/DoanLKMT/doanwebtmdt/public/uploads/' . $fileName;
         }
-        /* product=new Product;
-        $product->name=$request->name;
-        $product->code=$request->code;
-        $product->brand_id=$request->brand_id;
-        $product->price=$request->price;
-        $product->old_price=$request->old_price;
-        $product->inventory_num=$request->inventory_num;
-        $product->short_desc=$request->short_desc;
-        $product->detail_desc=$request->detail_desc;
-        $product->warranty=$request->warranty;
-        $product->product_category_id=$request->product_category_id;
-        $product->user_id=Auth::user()->id;
-        $product->thumb=$request->thumb;
-        $product->save(); */
+       
          Product::create([
             'name' => $request->input('name'),
             'code' => Str::slug($request->input('name')),
