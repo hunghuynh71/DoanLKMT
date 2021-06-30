@@ -108,6 +108,8 @@ class ProductController extends Controller
             [
                 'name' => 'Tên sản phẩm',
                 'code' => 'Mã sản phẩm',
+                'price'=>"Giá bán",
+                'old_price'=>"Giá cũ",
                 'short_desc' => 'Tóm tắt ngắn',
                 'product_category_id' => 'Danh mục sản phẩm',
                 'thumb' => 'Ảnh đại diện',

@@ -6,7 +6,7 @@
             Thêm sản phẩm
         </div>
         <div class="card-body">
-            @if(count($errors)>0)
+           <!--  @if(count($errors)>0)
                    <div class="alert alert-danger">
                        @foreach($errors->all() as $err)
                           {{$err}}<br>
@@ -17,7 +17,7 @@
                    <div class="allert alert-success">
                     {{session('thongbao')}}
                     </div>
-                @endif 
+                @endif  -->
          
                     <form method="post" action="{{route('admin.product.add')}}" enctype="multipart/form-data">
                     @csrf
