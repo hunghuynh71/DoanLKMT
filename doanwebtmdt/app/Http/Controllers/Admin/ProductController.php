@@ -30,7 +30,7 @@ class ProductController extends Controller
 
         $status = $request->input('status');
 
-        $list_Product = Product::where('name', 'like', "%{$key}%")->paginate(5);
+        $list_Product = Product::where('name', 'like', "%{$key}%")->orderByDesc('id')->paginate(5);
 
         $list_action = array(
             'trash' => 'Xóa tạm thời'
@@ -41,11 +41,11 @@ class ProductController extends Controller
                 'active' => 'Khôi phục',
                 'forceDelete' => 'Xóa vĩnh viễn'
             );
-            $list_Product = Product::onlyTrashed()->where('name', 'like', "%{$key}%")->paginate(5);
+            $list_Product = Product::onlyTrashed()->where('name', 'like', "%{$key}%")->orderByDesc('id')->paginate(5);
         }
 
         if ($status == 'approved') {
-            $list_Product = Product::where('status', 'approved')->where('name', 'like', "%{$key}%")->paginate(5);
+            $list_Product = Product::where('status', 'approved')->where('name', 'like', "%{$key}%")->orderByDesc('id')->paginate(5);
         }
 
         if ($status == 'not approved yet') {
@@ -87,7 +87,7 @@ class ProductController extends Controller
         $request->validate(
             [
                 'name' => 'required|min:5|max:200',
-                'code' => 'required|min:5|max:30|unique:products',
+           
                 'short_desc' => 'required|min:10|max:300',
                 'product_category_id' => 'required',
                 'thumb' => 'required|image|max:20480',

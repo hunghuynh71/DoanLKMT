@@ -58,11 +58,11 @@ return [
         'icon'=>'fab fa-product-hunt',
         'items'=>[
             [
-                'name'=>'Danh sách sản phẩm',
+                'name'=>'Danh sách loại sản phẩm',
                 'route'=>'admin.product_category.index' 
             ],
             [
-                'name'=>'Thêm sản phẩm',
+                'name'=>'Thêm loại sản phẩm',
                 'route'=>'admin.product_category.add'
             ],
             /* [

@@ -25,7 +25,7 @@ class BrandController extends Controller
 
         $status = $request->input('status');
 
-        $list_Brand = Brand::where('name', 'like', "%{$key}%")->orderBy('id')->paginate(5);
+        $list_Brand = Brand::where('name', 'like', "%{$key}%")->orderByDesc('id')->paginate(5);
 
         $list_action = array(
             'trash' => 'Xóa tạm thời'
